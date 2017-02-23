@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="RoyWang's blog">
 <meta property="og:description" content="fn.call(obj, arg1, arg2);表示：调用 fn 函数，将 arg1 和 arg2 传入函数，并将函数内的 this 指向 obj。
 123456789function add(a,b)  &amp;#123;  	alert(a+b);  &amp;#125;  function sub(a,b)  &amp;#123;  	alert(a-b);  &amp;#125;  add.call(sub,3,1)">
-<meta property="og:updated_time" content="2017-02-23T08:06:25.498Z">
+<meta property="og:updated_time" content="2017-02-23T08:09:28.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="须知">
 <meta name="twitter:description" content="fn.call(obj, arg1, arg2);表示：调用 fn 函数，将 arg1 和 arg2 传入函数，并将函数内的 this 指向 obj。
@@ -397,7 +397,7 @@
 <li>call 是 把第二个及以后的参数作为f方法的实参传进去<br>而bind 虽说也是获取第二个及以后的参数用于之后方法的执行，但是f_Extend中传入的实参则是在bind中传入参数的基础上往后排的。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function f(a,b,c)&#123;</div><div class="line">    console.log(a,b,c);</div><div class="line">&#125;</div><div class="line">f.call(null, &apos;a&apos;); // a undefined undefined</div><div class="line">var f_Extend = f.bind(null,&quot;extend_A&quot;);</div><div class="line">f_Extend(&apos;a&apos;); // extend_A a undefined</div></pre></td></tr></table></figure>
-<p>#立即执行函数中无法赋值<br>现象如下，不知原因<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 使用立即执行函数</div><div class="line">(function c () &#123;</div><div class="line">    console.log(c); // Function c</div><div class="line">    c = 1000;</div><div class="line">    console.log(c); // Function c</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// 使用普通函数调用</div><div class="line">function c () &#123;</div><div class="line">    console.log(c); // Function c</div><div class="line">    c = 1000;</div><div class="line">    console.log(c); // 1000</div><div class="line">&#125;;</div><div class="line">c();</div></pre></td></tr></table></figure></p>
+<h1 id="立即执行函数中无法赋值"><a href="#立即执行函数中无法赋值" class="headerlink" title="立即执行函数中无法赋值"></a>立即执行函数中无法赋值</h1><p>现象如下，不知原因<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 使用立即执行函数</div><div class="line">(function c () &#123;</div><div class="line">    console.log(c); // Function c</div><div class="line">    c = 1000;</div><div class="line">    console.log(c); // Function c</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// 使用普通函数调用</div><div class="line">function c () &#123;</div><div class="line">    console.log(c); // Function c</div><div class="line">    c = 1000;</div><div class="line">    console.log(c); // 1000</div><div class="line">&#125;;</div><div class="line">c();</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -578,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fn-call-obj-arg1-arg2"><span class="nav-number">1.</span> <span class="nav-text">fn.call(obj, arg1, arg2);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind-函数的兼容处理"><span class="nav-number">2.</span> <span class="nav-text">bind 函数的兼容处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind和call的区别"><span class="nav-number">3.</span> <span class="nav-text">bind和call的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fn-call-obj-arg1-arg2"><span class="nav-number">1.</span> <span class="nav-text">fn.call(obj, arg1, arg2);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind-函数的兼容处理"><span class="nav-number">2.</span> <span class="nav-text">bind 函数的兼容处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind和call的区别"><span class="nav-number">3.</span> <span class="nav-text">bind和call的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#立即执行函数中无法赋值"><span class="nav-number">4.</span> <span class="nav-text">立即执行函数中无法赋值</span></a></li></ol></div>
             
 
           </div>
