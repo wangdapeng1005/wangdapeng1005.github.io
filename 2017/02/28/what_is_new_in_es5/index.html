@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,html,css," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -87,19 +87,40 @@
 
 
 
-<meta name="description" content="fn.call(obj, arg1, arg2);表示：调用 fn 函数，将 arg1 和 arg2 传入函数，并将函数内的 this 指向 obj。
-123456789function add(a,b)  &amp;#123;  	alert(a+b);  &amp;#125;  function sub(a,b)  &amp;#123;  	alert(a-b);  &amp;#125;  add.call(sub,3,1)">
+<meta name="description" content="Object/array literal extensions
+Getter accessors
+Setter accessors
+Trailing commas in object literals
+Trailing commas in array literals
+Reserved words as property names
+
+Object static methods
+Object.cr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="须知">
-<meta property="og:url" content="http://yoursite.com/2017/02/23/HeHexo之NexT主题搭建博客详细过程/index.html">
+<meta property="og:title" content="RoyWang's blog">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/what_is_new_in_es5/index.html">
 <meta property="og:site_name" content="RoyWang's blog">
-<meta property="og:description" content="fn.call(obj, arg1, arg2);表示：调用 fn 函数，将 arg1 和 arg2 传入函数，并将函数内的 this 指向 obj。
-123456789function add(a,b)  &amp;#123;  	alert(a+b);  &amp;#125;  function sub(a,b)  &amp;#123;  	alert(a-b);  &amp;#125;  add.call(sub,3,1)">
-<meta property="og:updated_time" content="2017-02-23T08:09:28.214Z">
+<meta property="og:description" content="Object/array literal extensions
+Getter accessors
+Setter accessors
+Trailing commas in object literals
+Trailing commas in array literals
+Reserved words as property names
+
+Object static methods
+Object.cr">
+<meta property="og:updated_time" content="2017-02-28T13:55:12.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="须知">
-<meta name="twitter:description" content="fn.call(obj, arg1, arg2);表示：调用 fn 函数，将 arg1 和 arg2 传入函数，并将函数内的 this 指向 obj。
-123456789function add(a,b)  &amp;#123;  	alert(a+b);  &amp;#125;  function sub(a,b)  &amp;#123;  	alert(a-b);  &amp;#125;  add.call(sub,3,1)">
+<meta name="twitter:title" content="RoyWang's blog">
+<meta name="twitter:description" content="Object/array literal extensions
+Getter accessors
+Setter accessors
+Trailing commas in object literals
+Trailing commas in array literals
+Reserved words as property names
+
+Object static methods
+Object.cr">
 
 
 
@@ -127,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/23/HeHexo之NexT主题搭建博客详细过程/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/28/what_is_new_in_es5/"/>
 
 
 
 
 
-  <title> 须知 | RoyWang's blog </title>
+  <title>  | RoyWang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +303,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/23/HeHexo之NexT主题搭建博客详细过程/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/what_is_new_in_es5/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="RoyWang">
@@ -306,7 +327,7 @@
             
             
               
-                须知
+                
               
             
           </h1>
@@ -321,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-23T15:39:31+08:00">
-                2017-02-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T21:55:01+08:00">
+                2017-02-28
               </time>
             
 
@@ -332,28 +353,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -362,8 +361,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/23/HeHexo之NexT主题搭建博客详细过程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/23/HeHexo之NexT主题搭建博客详细过程/" itemprop="commentCount"></span>
+                <a href="/2017/02/28/what_is_new_in_es5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/what_is_new_in_es5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,15 +388,104 @@
       
 
       
-        <h1 id="fn-call-obj-arg1-arg2"><a href="#fn-call-obj-arg1-arg2" class="headerlink" title="fn.call(obj, arg1, arg2);"></a>fn.call(obj, arg1, arg2);</h1><p>表示：调用 fn 函数，将 arg1 和 arg2 传入函数，并将函数内的 this 指向 obj。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function add(a,b)  &#123;  </div><div class="line">	alert(a+b);  </div><div class="line">&#125;  </div><div class="line">function sub(a,b)  &#123;  </div><div class="line">	alert(a-b);  </div><div class="line">&#125;  </div><div class="line">add.call(sub,3,1);  // 调用add函数，将3和1传入，如果函数中有this，将其指向sub函数。</div><div class="line"></div><div class="line">// 结果 alert(4)</div></pre></td></tr></table></figure>
-<h1 id="bind-函数的兼容处理"><a href="#bind-函数的兼容处理" class="headerlink" title="bind 函数的兼容处理"></a>bind 函数的兼容处理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if (!Function.prototype.bind) &#123;</div><div class="line">    Function.prototype.bind = function(obj) &#123;</div><div class="line">        var _self = this</div><div class="line">            ,args = arguments;</div><div class="line">        return function() &#123;</div><div class="line">            _self.apply(obj, Array.prototype.slice.call(args, 1));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="bind和call的区别"><a href="#bind和call的区别" class="headerlink" title="bind和call的区别"></a>bind和call的区别</h1><ol>
-<li>bind返回函数，call执行函数。</li>
-<li>call 是 把第二个及以后的参数作为f方法的实参传进去<br>而bind 虽说也是获取第二个及以后的参数用于之后方法的执行，但是f_Extend中传入的实参则是在bind中传入参数的基础上往后排的。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function f(a,b,c)&#123;</div><div class="line">    console.log(a,b,c);</div><div class="line">&#125;</div><div class="line">f.call(null, &apos;a&apos;); // a undefined undefined</div><div class="line">var f_Extend = f.bind(null,&quot;extend_A&quot;);</div><div class="line">f_Extend(&apos;a&apos;); // extend_A a undefined</div></pre></td></tr></table></figure>
-<h1 id="立即执行函数中无法赋值"><a href="#立即执行函数中无法赋值" class="headerlink" title="立即执行函数中无法赋值"></a>立即执行函数中无法赋值</h1><p>现象如下，不知原因<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 使用立即执行函数</div><div class="line">(function c () &#123;</div><div class="line">    console.log(c); // Function c</div><div class="line">    c = 1000;</div><div class="line">    console.log(c); // Function c</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// 使用普通函数调用</div><div class="line">function c () &#123;</div><div class="line">    console.log(c); // Function c</div><div class="line">    c = 1000;</div><div class="line">    console.log(c); // 1000</div><div class="line">&#125;;</div><div class="line">c();</div></pre></td></tr></table></figure></p>
+        <h1 id="Object-array-literal-extensions"><a href="#Object-array-literal-extensions" class="headerlink" title="Object/array literal extensions"></a>Object/array literal extensions</h1><ul>
+<li>Getter accessors</li>
+<li>Setter accessors</li>
+<li>Trailing commas in object literals</li>
+<li>Trailing commas in array literals</li>
+<li>Reserved words as property names</li>
+</ul>
+<h1 id="Object-static-methods"><a href="#Object-static-methods" class="headerlink" title="Object static methods"></a>Object static methods</h1><ul>
+<li>Object.create()</li>
+<li>Object.defineProperty()</li>
+<li>Object.defineProperties()</li>
+<li>Object.getPrototypeOf()</li>
+<li>Object.keys()</li>
+<li>Object.seal()</li>
+<li>Object.freeze()</li>
+<li>Object.preventExtensions()</li>
+<li>Object.isSealed()</li>
+<li>Object.isFrozen()</li>
+<li>Object.isExtensible()</li>
+<li>Object.getOwnPropertyDescriptor()</li>
+<li>Object.getOwnPropertyNames()</li>
+</ul>
+<h1 id="Array-methods"><a href="#Array-methods" class="headerlink" title="Array methods"></a>Array methods</h1><ul>
+<li>Array.isArray()</li>
+<li>Array.prototype.indexOf()</li>
+<li>Array.prototype.lastIndexOf()</li>
+<li>Array.prototype.every()</li>
+<li>Array.prototype.some()</li>
+<li>Array.prototype.forEach()</li>
+<li>Array.prototype.map()</li>
+<li>Array.prototype.filter()</li>
+<li>Array.prototype.reduce()</li>
+<li>Array.prototype.reduceRight()</li>
+</ul>
+<h1 id="String-properties-and-methods"><a href="#String-properties-and-methods" class="headerlink" title="String properties and methods"></a>String properties and methods</h1><ul>
+<li>Property access on strings</li>
+<li>String.prototype.trim()</li>
+</ul>
+<h1 id="Date-methods"><a href="#Date-methods" class="headerlink" title="Date methods"></a>Date methods</h1><ul>
+<li>Date.prototype.toISOString()</li>
+<li>Date.now()</li>
+<li>Date.prototype.toJSON()</li>
+</ul>
+<h1 id="Function-prototype-bind"><a href="#Function-prototype-bind" class="headerlink" title="Function.prototype.bind()"></a>Function.prototype.bind()</h1><h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h1 id="Immutable-globals"><a href="#Immutable-globals" class="headerlink" title="Immutable globals"></a>Immutable globals</h1><ul>
+<li>undefined</li>
+<li>NaN</li>
+<li>Infinity</li>
+</ul>
+<h1 id="Miscellaneous"><a href="#Miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h1><ul>
+<li>Array.prototype.sort: compareFn must be function or undefined</li>
+<li>Array.prototype.sort: compareFn may be explicit undefined</li>
+<li>Function.prototype.apply permits array-likes</li>
+<li>parseInt ignores leading zeros</li>
+<li>Function “prototype” property is non-enumerable</li>
+<li>Arguments toStringTag is “Arguments”</li>
+<li>Zero-width chars in identifiers</li>
+<li>Unreserved words</li>
+<li>Enumerable properties can be shadowed by non-enumerables</li>
+<li>Thrown functions have proper “this” values</li>
+</ul>
+<h1 id="Strict-mode"><a href="#Strict-mode" class="headerlink" title="Strict mode"></a>Strict mode</h1><ul>
+<li>reserved words</li>
+<li>“this” is undefined in functions</li>
+<li>“this” is not coerced to object in primitive methods</li>
+<li>“this” is not coerced to object in primitive accessors</li>
+<li>legacy octal is a SyntaxError</li>
+<li>assignment to unresolvable identifiers is a ReferenceError</li>
+<li>assignment to eval or arguments is a SyntaxError</li>
+<li>assignment to non-writable properties is a TypeError</li>
+<li>eval or arguments bindings is a SyntaxError</li>
+<li>arguments.caller removed or is a TypeError</li>
+<li>arguments.callee is a TypeError</li>
+<li>(function(){}).caller and (function(){}).arguments is a TypeError</li>
+<li>arguments is unmapped</li>
+<li>eval() can’t create bindings</li>
+<li>deleting bindings is a SyntaxError</li>
+<li>deleting non-configurable properties is a TypeError</li>
+<li>“with” is a SyntaxError</li>
+<li>repeated parameter names is a SyntaxError</li>
+<li>function expressions with matching name and argument are valid</li>
+</ul>
+<h1 id="es5-shim"><a href="#es5-shim" class="headerlink" title="es5-shim"></a>es5-shim</h1><ul>
+<li>Object.keys()</li>
+<li>Array.prototype.every()</li>
+<li>Array.prototype.filter()</li>
+<li>Array.prototype.forEach()</li>
+<li>Array.prototype.indexOf()</li>
+<li>Array.prototype.lastIndexOf()</li>
+<li>Array.prototype.map()</li>
+<li>Array.prototype.some()</li>
+<li>String.prototype.sort()</li>
+<li>String.prototype.reduce()</li>
+<li>String.prototype.reduceRight()</li>
+<li>String.isArray()</li>
+<li>Date.now()</li>
+<li>Date.prototype.toJSON()</li>
+<li>Function.prototype.bind()</li>
+</ul>
 
       
     </div>
@@ -419,16 +507,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-            <a href="/tags/html/" rel="tag"># html</a>
-          
-            <a href="/tags/css/" rel="tag"># css</a>
-          
-        </div>
-      
 
       
         
@@ -438,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/05/18/JS更随机的随机数/" rel="next" title="JS更随机的随机数">
-                <i class="fa fa-chevron-left"></i> JS更随机的随机数
+              <a href="/2017/02/23/HeHexo之NexT主题搭建博客详细过程/" rel="next" title="须知">
+                <i class="fa fa-chevron-left"></i> 须知
               </a>
             
           </div>
@@ -448,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/28/what_is_new_in_es5/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/02/HTTP缓存控制小结/" rel="prev" title="HTTP缓存控制小结">
+                HTTP缓存控制小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -465,10 +543,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/23/HeHexo之NexT主题搭建博客详细过程/"
-     data-title="须知"
+        <div class="ds-share flat" data-thread-key="2017/02/28/what_is_new_in_es5/"
+     data-title=""
      data-content=""
-     data-url="http://yoursite.com/2017/02/23/HeHexo之NexT主题搭建博客详细过程/">
+     data-url="http://yoursite.com/2017/02/28/what_is_new_in_es5/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -495,8 +573,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/23/HeHexo之NexT主题搭建博客详细过程/"
-           data-title="须知" data-url="http://yoursite.com/2017/02/23/HeHexo之NexT主题搭建博客详细过程/">
+      <div class="ds-thread" data-thread-key="2017/02/28/what_is_new_in_es5/"
+           data-title="" data-url="http://yoursite.com/2017/02/28/what_is_new_in_es5/">
       </div>
     
   </div>
@@ -598,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fn-call-obj-arg1-arg2"><span class="nav-number">1.</span> <span class="nav-text">fn.call(obj, arg1, arg2);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind-函数的兼容处理"><span class="nav-number">2.</span> <span class="nav-text">bind 函数的兼容处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind和call的区别"><span class="nav-number">3.</span> <span class="nav-text">bind和call的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#立即执行函数中无法赋值"><span class="nav-number">4.</span> <span class="nav-text">立即执行函数中无法赋值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-array-literal-extensions"><span class="nav-number">1.</span> <span class="nav-text">Object/array literal extensions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-static-methods"><span class="nav-number">2.</span> <span class="nav-text">Object static methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-methods"><span class="nav-number">3.</span> <span class="nav-text">Array methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String-properties-and-methods"><span class="nav-number">4.</span> <span class="nav-text">String properties and methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date-methods"><span class="nav-number">5.</span> <span class="nav-text">Date methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function-prototype-bind"><span class="nav-number">6.</span> <span class="nav-text">Function.prototype.bind()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">7.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Immutable-globals"><span class="nav-number">8.</span> <span class="nav-text">Immutable globals</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Miscellaneous"><span class="nav-number">9.</span> <span class="nav-text">Miscellaneous</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Strict-mode"><span class="nav-number">10.</span> <span class="nav-text">Strict mode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#es5-shim"><span class="nav-number">11.</span> <span class="nav-text">es5-shim</span></a></li></ol></div>
             
 
           </div>
