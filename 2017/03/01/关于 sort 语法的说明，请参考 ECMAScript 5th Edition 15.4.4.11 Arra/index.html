@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTTP缓存," />
+  <meta name="keywords" content="兼容性," />
 
 
 
@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="HTTP缓存控制小结">
+<meta name="description" content="标准参考在 ECMAScript 第三、五版中，Array.prototype.sort(comparefn) 如果定义了 comparefn 这个方法，它接受两个参数 x 和 y。要求的返回值是一个正数 (x &amp;gt; y)，零 (x = y) 或者是负数 (x &amp;lt; y)。
+问题描述Array.prototype.sort 方法在使用 comparefn 辅助排序时，如果 comparef">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP缓存控制小结">
-<meta property="og:url" content="http://yoursite.com/2017/07/02/HTTP缓存控制小结/index.html">
+<meta property="og:title" content="Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致">
+<meta property="og:url" content="http://yoursite.com/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/index.html">
 <meta property="og:site_name" content="RoyWang's blog">
-<meta property="og:description" content="HTTP缓存控制小结">
-<meta property="og:updated_time" content="2017-02-28T08:40:53.990Z">
+<meta property="og:description" content="标准参考在 ECMAScript 第三、五版中，Array.prototype.sort(comparefn) 如果定义了 comparefn 这个方法，它接受两个参数 x 和 y。要求的返回值是一个正数 (x &amp;gt; y)，零 (x = y) 或者是负数 (x &amp;lt; y)。
+问题描述Array.prototype.sort 方法在使用 comparefn 辅助排序时，如果 comparef">
+<meta property="og:updated_time" content="2017-03-01T00:43:25.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP缓存控制小结">
-<meta name="twitter:description" content="HTTP缓存控制小结">
+<meta name="twitter:title" content="Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致">
+<meta name="twitter:description" content="标准参考在 ECMAScript 第三、五版中，Array.prototype.sort(comparefn) 如果定义了 comparefn 这个方法，它接受两个参数 x 和 y。要求的返回值是一个正数 (x &amp;gt; y)，零 (x = y) 或者是负数 (x &amp;lt; y)。
+问题描述Array.prototype.sort 方法在使用 comparefn 辅助排序时，如果 comparef">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/02/HTTP缓存控制小结/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/"/>
 
 
 
 
 
-  <title> HTTP缓存控制小结 | RoyWang's blog </title>
+  <title> Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致 | RoyWang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -279,7 +282,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/HTTP缓存控制小结/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="RoyWang">
@@ -303,7 +306,7 @@
             
             
               
-                HTTP缓存控制小结
+                Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致
               
             
           </h1>
@@ -318,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T00:00:00+08:00">
-                2017-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T08:21:04+08:00">
+                2017-03-01
               </time>
             
 
@@ -359,8 +362,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/02/HTTP缓存控制小结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/02/HTTP缓存控制小结/" itemprop="commentCount"></span>
+                <a href="/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +389,29 @@
       
 
       
-        <h2 id="HTTP缓存控制小结"><a href="#HTTP缓存控制小结" class="headerlink" title="HTTP缓存控制小结"></a><a href="http://imweb.io/topic/5795dcb6fb312541492eda8c?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">HTTP缓存控制小结</a></h2>
+        <h2 id="标准参考"><a href="#标准参考" class="headerlink" title="标准参考"></a>标准参考</h2><p>在 ECMAScript 第三、五版中，Array.prototype.sort(comparefn) 如果定义了 comparefn 这个方法，它接受两个参数 x 和 y。要求的返回值是一个正数 (x &gt; y)，零 (x = y) 或者是负数 (x &lt; y)。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Array.prototype.sort 方法在使用 comparefn 辅助排序时，如果 comparefn 返回值非规范规定的 -1、0、1 值范围，返回的排序结果可能与预期不一致。</p>
+<p>分析以下代码，预期将数组元素进行升序排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var test10Elements = [7, 6, 5, 4, 3, 2, 1, 0, 8, 9];</div><div class="line">var comparefn = function (x, y) &#123;</div><div class="line">  return x &gt; y;</div><div class="line">&#125;;</div><div class="line">test10Elements.sort(comparefn);</div></pre></td></tr></table></figure>
+<p>代码中，comparefn 函数返回值为 bool 类型，并非为规范规定的 -1、0、1 值。那么执行此代码，各 JS 脚本引擎实现情况如何？</p>
+<ul>
+<li>JScript [2, 3, 5, 1, 4, 6, 7, 0, 8, 9]  不符合预期</li>
+<li>Carakan [0, 1, 3, 8, 2, 4, 9, 5, 6, 7]  不符合预期</li>
+<li>Chakra &amp; JavaScriptCore [7, 6, 5, 4, 3, 2, 1, 0, 8, 9]  不符合预期</li>
+<li>IonMonkey   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  符合预期</li>
+<li>V8  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  符合预期</li>
+</ul>
+<p><strong>将数组元素扩大至 11 位：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var test11Elements = [7, 6, 5, 4, 3, 2, 1, 0, 10, 9, 8];</div><div class="line">var comparefn = function (x, y) &#123;</div><div class="line">  return x &gt; y;</div><div class="line">&#125;;</div><div class="line">test11Elements.sort(comparefn);</div></pre></td></tr></table></figure>
+<ul>
+<li>JScript [2, 3, 5, 1, 4, 6, 7, 0, 8, 9, 10]  不符合预期</li>
+<li>Carakan [0, 1, 3, 8, 2, 4, 9, 5, 10, 6, 7]  不符合预期</li>
+<li>Chakra &amp; JavaScriptCore [7, 6, 5, 4, 3, 2, 1, 0, 10, 8, 9]  不符合预期</li>
+<li>IonMonkey   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  符合预期</li>
+<li>V8  [5, 0, 1, 2, 3, 4, 6, 7, 8, 9, 10]  不符合预期</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p><strong>调用 Array.prototype.sort 函数并需要依赖 comparefn 处理排序结果时，应遵循规将 comparefn 函数返回值约束在 -1、0、1 范围内。</strong></p>
+
       
     </div>
 
@@ -409,7 +434,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP缓存/" rel="tag"># HTTP缓存</a>
+            <a href="/tags/兼容性/" rel="tag"># 兼容性</a>
           
         </div>
       
@@ -422,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/" rel="next" title="Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致">
-                <i class="fa fa-chevron-left"></i> Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致
+              <a href="/2017/02/28/what_is_new_in_es5/" rel="next" title="What is new in ES5?">
+                <i class="fa fa-chevron-left"></i> What is new in ES5?
               </a>
             
           </div>
@@ -431,6 +456,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/02/HTTP缓存控制小结/" rel="prev" title="HTTP缓存控制小结">
+                HTTP缓存控制小结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -445,10 +474,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/07/02/HTTP缓存控制小结/"
-     data-title="HTTP缓存控制小结"
+        <div class="ds-share flat" data-thread-key="2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/"
+     data-title="Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致"
      data-content=""
-     data-url="http://yoursite.com/2017/07/02/HTTP缓存控制小结/">
+     data-url="http://yoursite.com/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -475,8 +504,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/07/02/HTTP缓存控制小结/"
-           data-title="HTTP缓存控制小结" data-url="http://yoursite.com/2017/07/02/HTTP缓存控制小结/">
+      <div class="ds-thread" data-thread-key="2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/"
+           data-title="Array.prototype.sort当使用了 comparefn 后返回值不为 -1、0、1时，各引擎实现排序结果不一致" data-url="http://yoursite.com/2017/03/01/关于 sort 语法的说明，请参考 ECMAScript 5th Edition 15.4.4.11 Arra/">
       </div>
     
   </div>
@@ -578,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP缓存控制小结"><span class="nav-number">1.</span> <span class="nav-text">HTTP缓存控制小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准参考"><span class="nav-number">1.</span> <span class="nav-text">标准参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
             
 
           </div>
