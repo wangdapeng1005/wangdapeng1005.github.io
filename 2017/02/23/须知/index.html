@@ -87,19 +87,22 @@
 
 
 
-<meta name="description" content="安全的类型检测1Object.prototype.toString.call(value) === &amp;quot;[object Type]&amp;quot;
-作用域安全的构造函数1234567function Person(name, age) &amp;#123;    if (!this instanceof Person) &amp;#123;        return new Person(name, age">
+<meta name="description" content="内联事件处理函数的作用域链与其他函数不同，内联事件处理函数的作用域链从头部开始依次是：调用对象、该元素的 DOM 对象、该元素所属 FORM 的 DOM 对象（如果有）、document 对象、window 对象（全局对象）。
+如以下代码：
+123&amp;lt;form action=&amp;quot;.&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt;  &amp;lt;input type=&amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="须知">
 <meta property="og:url" content="http://yoursite.com/2017/02/23/须知/index.html">
 <meta property="og:site_name" content="RoyWang's blog">
-<meta property="og:description" content="安全的类型检测1Object.prototype.toString.call(value) === &amp;quot;[object Type]&amp;quot;
-作用域安全的构造函数1234567function Person(name, age) &amp;#123;    if (!this instanceof Person) &amp;#123;        return new Person(name, age">
-<meta property="og:updated_time" content="2017-02-28T14:13:34.651Z">
+<meta property="og:description" content="内联事件处理函数的作用域链与其他函数不同，内联事件处理函数的作用域链从头部开始依次是：调用对象、该元素的 DOM 对象、该元素所属 FORM 的 DOM 对象（如果有）、document 对象、window 对象（全局对象）。
+如以下代码：
+123&amp;lt;form action=&amp;quot;.&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt;  &amp;lt;input type=&amp;qu">
+<meta property="og:updated_time" content="2017-03-01T00:21:08.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="须知">
-<meta name="twitter:description" content="安全的类型检测1Object.prototype.toString.call(value) === &amp;quot;[object Type]&amp;quot;
-作用域安全的构造函数1234567function Person(name, age) &amp;#123;    if (!this instanceof Person) &amp;#123;        return new Person(name, age">
+<meta name="twitter:description" content="内联事件处理函数的作用域链与其他函数不同，内联事件处理函数的作用域链从头部开始依次是：调用对象、该元素的 DOM 对象、该元素所属 FORM 的 DOM 对象（如果有）、document 对象、window 对象（全局对象）。
+如以下代码：
+123&amp;lt;form action=&amp;quot;.&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt;  &amp;lt;input type=&amp;qu">
 
 
 
@@ -389,7 +392,19 @@
       
 
       
-        <h2 id="安全的类型检测"><a href="#安全的类型检测" class="headerlink" title="安全的类型检测"></a>安全的类型检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(value) === &quot;[object Type]&quot;</div></pre></td></tr></table></figure>
+        <h2 id="内联事件处理函数的作用域链"><a href="#内联事件处理函数的作用域链" class="headerlink" title="内联事件处理函数的作用域链"></a>内联事件处理函数的作用域链</h2><p>与其他函数不同，内联事件处理函数的作用域链从头部开始依次是：调用对象、该元素的 DOM 对象、该元素所属 FORM 的 DOM 对象（如果有）、document 对象、window 对象（全局对象）。</p>
+<p>如以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;.&quot; method=&quot;get&quot;&gt;</div><div class="line">  &lt;input type=&quot;button&quot; value=&quot;compatMode&quot; onclick=&quot;alert(compatMode);&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>相当于1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;.&quot; method=&quot;get&quot;&gt;</div><div class="line">  &lt;input type=&quot;button&quot; value=&quot;compatMode&quot;&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementsByTagName(&quot;input&quot;)[0].onclick=function()&#123;</div><div class="line">  with(document)&#123;</div><div class="line">    with(this2.form)3&#123;</div><div class="line">      with(this2)&#123;</div><div class="line">        alert(compatMode);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>以上两种写法的代码在所有浏览器中都将弹出 document.compatMode 的值。</p>
+<p>将上述代码中的 ‘compatMode’ 替换为 ‘method’，则在各浏览器中都将弹出 ‘get’，即 INPUT 元素所在表单对象的 method 属性值。</p>
+<p>注：</p>
+<ol>
+<li>这段代码仅为说明问题而模拟各浏览器的行为，并非表示所有浏览器都是如此实现的。</li>
+<li>是使用 this 关键字还是直接使用这个 DOM 对象，在各浏览器中有差异，详情请看本文 2.1 中的内容。</li>
+<li>是否添加 FORM 对象到作用域链中，各浏览器在实现上也有差异，详情请看本文 2.2 中的内容。</li>
+</ol>
+<h2 id="安全的类型检测"><a href="#安全的类型检测" class="headerlink" title="安全的类型检测"></a>安全的类型检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(value) === &quot;[object Type]&quot;</div></pre></td></tr></table></figure>
 <h2 id="作用域安全的构造函数"><a href="#作用域安全的构造函数" class="headerlink" title="作用域安全的构造函数"></a>作用域安全的构造函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Person(name, age) &#123;</div><div class="line">    if (!this instanceof Person) &#123;</div><div class="line">        return new Person(name, age);</div><div class="line">    &#125;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="惰性载入函数"><a href="#惰性载入函数" class="headerlink" title="惰性载入函数"></a>惰性载入函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function getXHR() &#123;</div><div class="line">    if(typeof XMLHttpRequest !== &apos;undefined&apos;)&#123;</div><div class="line">        getXHR = function()&#123;</div><div class="line">            return new XMLHttpRequest();</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">        getXHR = function()&#123;</div><div class="line">            // ...</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="函数绑定"><a href="#函数绑定" class="headerlink" title="函数绑定"></a>函数绑定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function bind(fn, context) &#123;</div><div class="line">    return function() &#123;</div><div class="line">        return fn.apply(context, arguments);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -606,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全的类型检测"><span class="nav-number">1.</span> <span class="nav-text">安全的类型检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域安全的构造函数"><span class="nav-number">2.</span> <span class="nav-text">作用域安全的构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#惰性载入函数"><span class="nav-number">3.</span> <span class="nav-text">惰性载入函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数绑定"><span class="nav-number">4.</span> <span class="nav-text">函数绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数柯里化"><span class="nav-number">5.</span> <span class="nav-text">函数柯里化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复定时器"><span class="nav-number">6.</span> <span class="nav-text">重复定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yielding-processes"><span class="nav-number">7.</span> <span class="nav-text">yielding processes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流"><span class="nav-number">8.</span> <span class="nav-text">函数节流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fn-call-obj-arg1-arg2"><span class="nav-number"></span> <span class="nav-text">fn.call(obj, arg1, arg2);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind-函数的兼容处理"><span class="nav-number"></span> <span class="nav-text">bind 函数的兼容处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind和call的区别"><span class="nav-number"></span> <span class="nav-text">bind和call的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#立即执行函数中无法赋值"><span class="nav-number"></span> <span class="nav-text">立即执行函数中无法赋值</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内联事件处理函数的作用域链"><span class="nav-number">1.</span> <span class="nav-text">内联事件处理函数的作用域链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全的类型检测"><span class="nav-number">2.</span> <span class="nav-text">安全的类型检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域安全的构造函数"><span class="nav-number">3.</span> <span class="nav-text">作用域安全的构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#惰性载入函数"><span class="nav-number">4.</span> <span class="nav-text">惰性载入函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数绑定"><span class="nav-number">5.</span> <span class="nav-text">函数绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数柯里化"><span class="nav-number">6.</span> <span class="nav-text">函数柯里化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复定时器"><span class="nav-number">7.</span> <span class="nav-text">重复定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yielding-processes"><span class="nav-number">8.</span> <span class="nav-text">yielding processes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流"><span class="nav-number">9.</span> <span class="nav-text">函数节流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fn-call-obj-arg1-arg2"><span class="nav-number"></span> <span class="nav-text">fn.call(obj, arg1, arg2);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind-函数的兼容处理"><span class="nav-number"></span> <span class="nav-text">bind 函数的兼容处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind和call的区别"><span class="nav-number"></span> <span class="nav-text">bind和call的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#立即执行函数中无法赋值"><span class="nav-number"></span> <span class="nav-text">立即执行函数中无法赋值</span></a></div>
             
 
           </div>
